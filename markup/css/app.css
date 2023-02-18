@@ -1,0 +1,46 @@
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    padding-left: 45px;
+    margin: 0;
+}
+
+.navbar ul li {
+    padding-left: 10px;
+}
+
+header {
+    display: flex;
+    background-color: #ddd;
+    padding: 15px;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.products {
+    display: flex;
+}
+
+.products .product-item {
+    width: 25%;
+}
+
+.products .product-item img {
+    width: 100%;
+}
+
+main {
+    margin-bottom: 25px;
+}
+
+footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 15px;
+}
