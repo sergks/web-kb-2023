@@ -1,3 +1,10 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
 .navbar ul {
     display: flex;
     list-style: none;
@@ -10,10 +17,24 @@
     padding-left: 10px;
 }
 
+.navbar ul li a {
+    text-decoration: none;
+    color: #666;
+}
+
+.navbar ul li a:hover {
+    color: #000;
+}
+
 header {
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+}
+
+header .container {
     display: flex;
-    background-color: #ddd;
     padding: 15px;
+    align-items: center;
 }
 
 .brand {
@@ -22,15 +43,58 @@ header {
 }
 
 .products {
+    margin-top: 25px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .products .product-item {
-    width: 25%;
+    width: calc(25% - 45px);
+    background-color: #fff;
+    padding: 15px;
 }
 
 .products .product-item img {
     width: 100%;
+}
+
+.products .product-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.products .product-item .btn-cart {
+    width: 100%;
+    background-color: #fc0;
+    color: #000;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.products .product-item h3 {
+    font-weight: normal;
+    font-size: inherit;
+}
+
+.products .product-item .price-container {
+    display: flex;
+    align-items: center;
+}
+
+.products .product-item .price-container .price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.products .product-item .price-container .old-price {
+    text-decoration: line-through;
+    margin-left: 15px;
+    color: #aaa;
+    font-size: 20px;
 }
 
 main {
@@ -39,8 +103,64 @@ main {
 
 footer {
     margin-top: 25px;
+    background-color: #fff;
+    padding: 15px;
+}
+
+footer .container {
     display: flex;
     justify-content: space-between;
-    background-color: #ddd;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .products .product-item {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .products .product-item {
+        width: 100%;
+    }
+}
+
+.login-form {
+    background-color: #fff;
+    width: 400px;
+    margin: 25px auto;
     padding: 15px;
+    border-radius: 10px;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    width: 100%;
+}
+
+.input-container input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 7px;
+}
+
+.login-form .btn-login {
+    background-color: #fc0;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.slider img {
+    width: 100%;
 }
