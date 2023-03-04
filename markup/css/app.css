@@ -44,13 +44,9 @@ header .container {
 
 .products {
     margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
 }
 
 .products .product-item {
-    width: calc(25% - 45px);
     background-color: #fff;
     padding: 15px;
 }
@@ -62,17 +58,6 @@ header .container {
 .products .product-item a {
     text-decoration: none;
     color: #000;
-}
-
-.products .product-item .btn-cart {
-    width: 100%;
-    background-color: #fc0;
-    color: #000;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 18px;
 }
 
 .products .product-item h3 {
@@ -104,17 +89,12 @@ main {
 footer {
     margin-top: 25px;
     background-color: #fff;
-    padding: 15px;
+    padding: 45px 15px;
 }
 
 footer .container {
     display: flex;
     justify-content: space-between;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
