@@ -21,7 +21,7 @@
                 <router-link to="/about" class="nav-link">О нас</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Войти</a>
+                <router-link to="/login" class="nav-link">Войти</router-link>
               </li>
             </ul>
           </div>
