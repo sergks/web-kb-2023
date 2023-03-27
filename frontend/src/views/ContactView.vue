@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  export default {
-    name: "ContactView"
-  }
+export default {
+  name: "ContactView"
+}
 </script>

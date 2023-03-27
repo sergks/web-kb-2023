@@ -1,26 +1,51 @@
 <template>
-  <div class="container pt-4">
-    <h1>Авторизация</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <button type="submit" class="btn btn-warning">Войти</button>
-        </form>
-      </div>
-    </div>
-  </div>
+  <main>
+    <section class="login-form">
+      <h1>Авторизация</h1>
+      <form class="mt-3" @submit="loginForm">
+        <div class="input-container email-container">
+          <input type="text" name="login" placeholder="Введите Email" v-model="email">
+          <div class="errors">{{ emailError }}</div>
+        </div>
+        <div class="input-container password-container">
+          <input type="password" name="password" placeholder="Введите пароль" v-model="password">
+          <div class="errors">{{ passwordError }}</div>
+        </div>
+        <div class="input-container">
+          <button class="btn-login" type="submit">Войти</button>
+        </div>
+      </form>
+    </section>
+  </main>
 </template>
 
 <script>
 export default {
-  name: "LoginView"
+  name: "LoginView",
+  data() {
+    return {
+      email: '',
+      password: '',
+      emailError: '',
+      passwordError: ''
+    }
+  },
+  methods: {
+    loginForm(event) {
+
+      this.emailError = ''
+      this.passwordError = ''
+
+      if (this.email.trim() === '') {
+        this.emailError = 'Заполните Email.'
+      }
+
+      if (this.password.trim() === '') {
+        this.passwordError = 'Заполните Пароль.'
+      }
+
+      event.preventDefault()
+    }
+  }
 }
 </script>
