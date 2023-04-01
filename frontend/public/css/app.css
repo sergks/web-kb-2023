@@ -127,3 +127,7 @@ footer .container {
 .errors {
     color: red;
 }
+
+.cart img {
+    width: 25px;
+}

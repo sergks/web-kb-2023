@@ -24,6 +24,13 @@
                 <router-link to="/login" class="nav-link">Войти</router-link>
               </li>
             </ul>
+            <div class="cart">
+              <img src="/img/shopping-cart.png">
+              &nbsp;
+              <b v-show="this.$store.getters.getCount > 0">
+                {{ this.$store.getters.getCount }}
+              </b>
+            </div>
           </div>
         </div>
       </nav>
