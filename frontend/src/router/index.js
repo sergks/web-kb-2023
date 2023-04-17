@@ -4,7 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import ContactView from "@/views/ContactView";
 import CatalogView from "@/views/CatalogView";
 import LoginView from "@/views/LoginView";
-import ProductCardView from "@/views/ProductCardView";
+import ProductInfoView from "@/views/ProductInfoView";
 
 const routes = [
   {
@@ -29,8 +29,8 @@ const routes = [
   },
   {
     path: '/catalog/:id',
-    name: 'catalogCard',
-    component: ProductCardView
+    name: 'productInfo',
+    component: ProductInfoView
   },
   {
     path: '/login',

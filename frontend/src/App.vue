@@ -25,7 +25,7 @@
               </li>
             </ul>
             <div class="cart">
-              <img src="/img/shopping-cart.png">
+              <img src="/img/shopping-cart.png" />
               &nbsp;
               <b v-show="this.$store.getters.getCount > 0">
                 {{ this.$store.getters.getCount }}
@@ -48,3 +48,4 @@
     </div>
   </footer>
 </template>
+
