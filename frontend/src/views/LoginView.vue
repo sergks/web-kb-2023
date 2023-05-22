@@ -20,6 +20,9 @@
 </template>
 
 <script>
+
+import axios from "axios";
+
 export default {
   name: "LoginView",
   data() {
@@ -42,6 +45,19 @@ export default {
 
       if (this.password.trim() === '') {
         this.passwordError = 'Заполните Пароль.'
+      }
+
+      if (!this.emailError && !this.passwordError) {
+          // запрос
+          const request = {
+              email: this.email,
+              password: this.password
+          }
+          axios.post('http://localhost/api/user/login', request)
+              .then((response) => {})
+              .catch((error) => {
+                  alert(error.message)
+              })
       }
 
       event.preventDefault()

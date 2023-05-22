@@ -5,14 +5,7 @@
         <img src="/img/image.png" class="img-fluid">
       </div>
       <div class="col-md-8">
-        <h1>Детальная карточка товара {{ id }}</h1>
-        <p>
-          Российская Федерация. Функции и полномочия учредителя осуществляет Министерство науки и высшего образования
-          Российской Федерации (место нахождения: 125993, г. Москва, ГСП- 3, ул. Тверская, д. 11).
-          <br>
-          Российская Федерация. Функции и полномочия учредителя осуществляет Министерство науки и высшего образования
-          Российской Федерации (место нахождения: 125993, г. Москва, ГСП- 3, ул. Тверская, д. 11).
-        </p>
+        <h1>{{ product.name }}</h1>
         <div class="price-container">
           <b class="price">{{ product.price }} ₽</b>
         </div>
@@ -26,16 +19,20 @@
 </template>
 
 <script>
+
+  import axios from "axios";
+
   export default {
     name: "ProductInfoView",
     data() {
       return {
-        id: null,
-        product: {id: 1, name: 'Товар 1', price: 1000, oldPrice: 2000}
+        product: {}
       }
     },
     created() {
-      this.id = this.$route.params.id
+      const id =  this.$route.params.id
+      axios.get('http://localhost/api/products/info/' + id)
+          .then((response) => this.product = response.data)
     }
   }
 </script>

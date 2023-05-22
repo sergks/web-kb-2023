@@ -41,19 +41,20 @@
 
   import ProductItem from "@/components/Product/ProductItem";
   import Slider from "@/components/Slider/Slider";
+  import axios from 'axios'
+
   export default {
     name: 'HomeView',
     components: {Slider, ProductItem},
     data() {
       return {
-        items: [
-          {id: 1, name: 'Товар 1', price: 1000, oldPrice: 2000, inCart: false},
-          {id: 2, name: 'Товар 2', price: 2000, oldPrice: 2000, inCart: false},
-          {id: 3, name: 'Товар 3', price: 3000, oldPrice: 2000, inCart: false},
-          {id: 4, name: 'Товар 4', price: 4000, oldPrice: 2000, inCart: false}
-        ]
+        items: []
       }
-    }
+    },
+      created() {
+        axios.get('http://localhost/api/products/top')
+            .then((result) => this.items = result.data)
+      }
   }
 
 </script>
